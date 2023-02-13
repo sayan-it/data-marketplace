@@ -28,7 +28,8 @@ export default function DataFilterForm() {
 
   const handleSearch = (queryText) => {
     axios
-      .get(`http://localhost:8000/search/data/${queryText}`)
+     // .get(`http://localhost:8000/search/data/${queryText}`)
+      .get(`https://adif-cognivite-search.search.windows.net/indexes/anish-test-data/docs?api-version=2021-04-30-Preview&search=${queryText}`)
       .then((result) => {
         setRecords(result.data.results);
       })
